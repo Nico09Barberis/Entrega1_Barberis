@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Proyecto',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'Entrega1_Barberis.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r'C:\Users\USER\OneDrive\Escritorio\PROYECTOS-PYTHON\Entrega1_Barberis\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
