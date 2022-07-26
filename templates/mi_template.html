@@ -1,0 +1,21 @@
+    {% extends 'base.html' %}
+    
+    {% block title %}
+    <title>MI TEMPLATE</title>
+    {% endblock title %}
+
+    {% block texto_header %}
+    ESTA ES MI PLANTILLA
+    {% endblock texto_header %}
+
+    {% block despues_del_header %}
+        <P>
+            <ul>
+                {% for objeto in lista_objetos  %}
+                <li>{{objeto.nombre}}</li>
+                {% endfor %}
+            </ul>
+        </P> 
+    {% endblock despues_del_header %}
+
+ 

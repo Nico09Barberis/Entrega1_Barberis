@@ -1,24 +1,63 @@
 from django.http import HttpResponse
-from .models import Prueba
+from .forms import BusquedaAuto, FormAuto
+from .models import Auto
 from django.template import loader
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from datetime import datetime
 
 # Create your views here.
 
 def primera_vista(request):
-    return HttpResponse('<h1>PERRO DINAMITA</h1>')
+    return render(request, 'index.html')
 
-def un_template(request):
-   
-    # template = loader.get_template('índex.html')
+def crear_auto(request):
     
-    prueba1 = Prueba(nombre='Pepito')
-    prueba2= Prueba(nombre='Pito')
-    prueba3 = Prueba(nombre='Tito')
-    prueba1.save()
-    prueba2.save()
-    prueba3.save()
+    # print(request.GET)
+    # marca = request.GET.get('marca')
+    # modelo = request.GET.get('modelo')
     
-    # render = template.render({'lista_objetos': [prueba1, prueba2, prueba3]})
+    # auto = Auto(marca=marca, modelo=modelo, fecha_creacion=datetime.now())
+    # auto.save()
     
-    return render(request, 'índex.html', {'lista_objetos': [prueba1, prueba2, prueba3]})
+    if request.method == 'POST':
+        form = FormAuto(request.POST)
+        
+        if form.is_valid():
+            data = form.cleaned_data
+            
+            fecha = data.get('fecha_creacion')
+            if not fecha:
+                fecha = datetime.now()
+    
+            auto = Auto(marca=data.get('marca'), 
+                        modelo=data.get('modelo'),
+                        fecha_creacion = fecha
+                        ) 
+            
+            auto.save()
+            
+            # listado_autos = Auto.objects.all()
+            
+            # return render(request, 'listado_autos.html', {'listado_autos': listado_autos})
+            return redirect('listado_autos')
+
+        else:
+            return render(request, 'crear_auto.html', {'form': form})
+    
+    form_auto = FormAuto()
+    return render(request, 'crear_auto.html', {'form': form_auto})
+
+def listado_autos(request):
+    
+    marca_busqueda = request.GET.get('marca')
+    
+    if marca_busqueda:
+        listado_autos = Auto.objects.filter(marca__icontains=marca_busqueda) 
+    else:
+        listado_autos = Auto.objects.all()
+        
+    form = BusquedaAuto()
+    return render(request, 'listado_autos.html', {'listado_autos': listado_autos, 'form': form})
+        
+    
+
