@@ -1,7 +1,5 @@
-from django.http import HttpResponse
 from .forms import BusquedaAuto, FormAuto
 from .models import Auto
-from django.template import loader
 from django.shortcuts import redirect, render
 from datetime import datetime
 
@@ -11,14 +9,7 @@ def primera_vista(request):
     return render(request, 'index.html')
 
 def crear_auto(request):
-    
-    # print(request.GET)
-    # marca = request.GET.get('marca')
-    # modelo = request.GET.get('modelo')
-    
-    # auto = Auto(marca=marca, modelo=modelo, fecha_creacion=datetime.now())
-    # auto.save()
-    
+        
     if request.method == 'POST':
         form = FormAuto(request.POST)
         
@@ -36,16 +27,13 @@ def crear_auto(request):
             
             auto.save()
             
-            # listado_autos = Auto.objects.all()
-            
-            # return render(request, 'listado_autos.html', {'listado_autos': listado_autos})
             return redirect('listado_autos')
 
         else:
-            return render(request, 'crear_auto.html', {'form': form})
+            return render(request, 'auto/crear_auto.html', {'form': form})
     
     form_auto = FormAuto()
-    return render(request, 'crear_auto.html', {'form': form_auto})
+    return render(request, 'auto/crear_auto.html', {'form': form_auto})
 
 def listado_autos(request):
     
@@ -57,7 +45,39 @@ def listado_autos(request):
         listado_autos = Auto.objects.all()
         
     form = BusquedaAuto()
-    return render(request, 'listado_autos.html', {'listado_autos': listado_autos, 'form': form})
-        
-    
+    return render(request, 'auto/listado_autos.html', {'listado_autos': listado_autos, 'form': form})
 
+def editar_auto(request, id):
+    
+    auto = Auto.objects.get(id=id)
+    
+    if request.method == 'POST':
+        form = FormAuto(request.POST)
+        if form.is_valid():
+            auto.marca = form.cleaned_data.get('marca')
+            auto.modelo = form.cleaned_data.get('modelo')
+            auto.fecha_creacion = form.cleaned_data.get('fecha_creacion')
+            auto.save()
+            
+            return redirect('listado_autos')
+        
+        else:
+            return render(request, 'auto/editar_auto.html', {'form': form, 'auto': auto})
+    
+    form_auto = FormAuto(initial={'marca': auto.marca, 'modelo': auto.modelo,'fecha_creacion': auto.fecha_creacion})
+    return render(request, 'auto/editar_auto.html', {'form': form_auto, 'auto': auto})
+
+
+def eliminar_auto(request, id):
+    auto = Auto.objects.get(id=id)
+    auto.delete()
+    
+    return redirect('listado_autos')
+
+def mostrar_auto(request, id):
+    auto = Auto.objects.get(id=id)
+    return render(request, 'auto/mostrar_auto.html', {'auto': auto})
+    
+    
+    
+    

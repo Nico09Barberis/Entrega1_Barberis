@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>LISTADO DE MOTOS</title>
+{% endblock title %}
+
+{% block texto_header %}
+<h1>LISTADO DE MOTOS:</h1>
+{% endblock texto_header %}
+
+{% block despues_del_header %}
+    <p>
+        <a href={% url 'crear_moto' %}> CREAR MOTO</a>
+    </p>
+  
+    <P>
+        {% if object_list %}
+       <ul>
+            {% for moto in object_list %}
+                <li>
+                    {{moto}}
+                    <a href={% url 'editar_moto' moto.id %}>Editar</a>
+                    <a href={% url 'eliminar_moto' moto.id %}>Eliminar</a>
+                    <a href={% url 'mostrar_moto' moto.id %}>Mostrar</a>
+
+                </li>
+            {% endfor %}
+       </ul>
+        {% else %}
+        No se encontraron datos
+        {% endif %}
+    </P> 
+{% endblock despues_del_header %}
+

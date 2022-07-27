@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>MOTOS</title>
+{% endblock title %}
+
+{% block texto_header %}
+<h1>MOTO:</h1>
+{% endblock texto_header %}
+
+{% block despues_del_header %}
+ <p>
+    <a href={% url 'listado_motos' %}>Volver</a>
+ </p>  
+    <P>
+        <ul>
+            <li>
+                {{moto.nombre}}
+            </li>
+            <li>
+                {{moto.modelo}}
+            </li>
+            <li>
+                {{moto.fecha_creacion}}
+            </li>
+       </ul>
+    </P> 
+{% endblock despues_del_header %}
+
