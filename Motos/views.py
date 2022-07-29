@@ -1,6 +1,7 @@
 from django.views.generic.list import ListView
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.views.generic import DetailView 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from.models import Moto
 
 
@@ -18,8 +19,8 @@ class CrearMoto(CreateView):
     fields = ['nombre', 'modelo', 'fecha_creacion']
     
     
-
-class EditarMoto(UpdateView):
+    
+class EditarMoto(LoginRequiredMixin, UpdateView):
     model = Moto
     template_name = 'moto/editar_moto.html'
     success_url = '/moto/motos'
@@ -27,7 +28,7 @@ class EditarMoto(UpdateView):
 
     
     
-class EliminarMoto(DeleteView):
+class EliminarMoto(LoginRequiredMixin, DeleteView):
     model = Moto
     template_name = 'moto/eliminar_moto.html'
     success_url = '/moto/motos'

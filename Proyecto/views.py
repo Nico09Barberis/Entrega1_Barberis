@@ -2,6 +2,7 @@ from .forms import BusquedaAuto, FormAuto
 from .models import Auto
 from django.shortcuts import redirect, render
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -47,6 +48,7 @@ def listado_autos(request):
     form = BusquedaAuto()
     return render(request, 'auto/listado_autos.html', {'listado_autos': listado_autos, 'form': form})
 
+@login_required
 def editar_auto(request, id):
     
     auto = Auto.objects.get(id=id)
@@ -67,7 +69,7 @@ def editar_auto(request, id):
     form_auto = FormAuto(initial={'marca': auto.marca, 'modelo': auto.modelo,'fecha_creacion': auto.fecha_creacion})
     return render(request, 'auto/editar_auto.html', {'form': form_auto, 'auto': auto})
 
-
+@login_required
 def eliminar_auto(request, id):
     auto = Auto.objects.get(id=id)
     auto.delete()
