@@ -1,6 +1,6 @@
-from urllib import request
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth import authenticate, login as django_login
 from .forms import MyUserCretionForm, MyUserEditForm
 from django.contrib.auth.decorators import login_required
@@ -53,7 +53,6 @@ def perfil(request):
 
 @login_required
 def editar_perfil(request):
-    # return render('accounts/perfil.html')
 
     user = request.user
     mas_datos_usuario, _ = MasDatosUsuario.objects.get_or_create(user=user)
@@ -69,13 +68,11 @@ def editar_perfil(request):
                 
             user.email = data.get('email') if data.get('email') else user.email
             mas_datos_usuario.avatar = data.get('avatar') if data.get('avatar') else mas_datos_usuario.avatar
-            
-            if data.get('password1') and data.get('password1') == data.get('password2'):
-                user.set_password(data.get('password1'))
+            mas_datos_usuario.descripcion = data.get('descripcion') if data.get('descripcion') else mas_datos_usuario.descripcion
+            mas_datos_usuario.red_social = data.get('red_social') if data.get('red_social') else mas_datos_usuario.red_social
             
             mas_datos_usuario.save()
             user.save()
-            
                 
             return redirect('perfil')
             
@@ -87,11 +84,19 @@ def editar_perfil(request):
             'email': user.email,
             'first_name': user.first_name,
             'last_name': user.last_name,
-            'avatar': mas_datos_usuario.avatar
+            'avatar': mas_datos_usuario.avatar,
+            'descripcion': mas_datos_usuario.descripcion,
+            'red_social': mas_datos_usuario.red_social,
             }
         )
     return render(request, 'accounts/editar_perfil.html', {'form': form})
 
+
+class ChangePasswordView(PasswordChangeView):
+    template_name = 'accounts/cambiar_password.html'
+    success_url = '/accounts/perfil/' 
+
     
-    
+def acerca_nos(request):
+    return render(request, 'acerca_nos.html')
     

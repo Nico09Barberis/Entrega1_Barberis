@@ -21,8 +21,9 @@ def crear_auto(request):
             if not fecha:
                 fecha = datetime.now()
     
-            auto = Auto(marca=data.get('marca'), 
-                        modelo=data.get('modelo'),
+            auto = Auto(marca = data.get('marca'), 
+                        modelo = data.get('modelo'),
+                        descripcion = data.get('descripcion'),
                         fecha_creacion = fecha
                         ) 
             
@@ -58,6 +59,7 @@ def editar_auto(request, id):
         if form.is_valid():
             auto.marca = form.cleaned_data.get('marca')
             auto.modelo = form.cleaned_data.get('modelo')
+            auto.descripcion = form.cleaned_data.get('descripcion')
             auto.fecha_creacion = form.cleaned_data.get('fecha_creacion')
             auto.save()
             
@@ -66,7 +68,12 @@ def editar_auto(request, id):
         else:
             return render(request, 'auto/editar_auto.html', {'form': form, 'auto': auto})
     
-    form_auto = FormAuto(initial={'marca': auto.marca, 'modelo': auto.modelo,'fecha_creacion': auto.fecha_creacion})
+    form_auto = FormAuto(
+        initial={'marca': auto.marca, 
+                 'modelo': auto.modelo,
+                 'descripcion': auto.descripcion,
+                 'fecha_creacion': auto.fecha_creacion})
+    
     return render(request, 'auto/editar_auto.html', {'form': form_auto, 'auto': auto})
 
 @login_required
@@ -83,3 +90,4 @@ def mostrar_auto(request, id):
     
     
     
+ 

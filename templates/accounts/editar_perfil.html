@@ -9,7 +9,7 @@
 {% endblock texto_header %}
 
 {% block despues_del_header %}
-   
+
     <P>
        <form action={% url 'editar_perfil' %} method="post" enctype='multipart/form-data'>
             {% csrf_token %}
@@ -18,6 +18,10 @@
             </table>
             <button>Editar</button>
        </form>
+        <p>
+            <a href={% url 'cambiar_password' %}>Cambiar password</a>
+        </p>
     </P> 
+   
 {% endblock despues_del_header %}
 

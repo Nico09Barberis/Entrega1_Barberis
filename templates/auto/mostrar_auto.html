@@ -15,13 +15,16 @@
     <P>
         <ul>
             <li>
-                {{auto.marca}}
+               <b>Marca:</b> {{auto.marca}}
             </li>
             <li>
-                {{auto.modelo}}
+               <b>Modelo:</b> {{auto.modelo}}
             </li>
             <li>
-                {{auto.fecha_creacion}}
+               <b>Descripcion:</b> {{auto.descripcion | safe}}
+            </li>
+            <li>
+               <b>Fecha de Creacion:</b> {{auto.fecha_creacion}}
             </li>
        </ul>
     </P> 

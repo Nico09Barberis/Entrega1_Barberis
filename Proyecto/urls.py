@@ -8,6 +8,4 @@ urlpatterns = [
     path('editar-auto/<int:id>/', editar_auto, name='editar_auto'),
     path('eliminar-auto/<int:id>/', eliminar_auto, name='eliminar_auto'),
     path('mostrar-auto/<int:id>/', mostrar_auto, name='mostrar_auto'),
-    
-    
 ]
