@@ -5,3 +5,6 @@ la posibilidad de crear, editar, eliminar y mostrar el objeto que desee.
 - En el apartado del perfil, se podra ver la informacion del usuario con sus datos y tambien poder modificar dicha informacion si es necesario.
 -  En la pantalla de inicio, se puede ver una pequeña introducción sobre lo que trata el proyecto.
 - Tambien agregue una vista 'Acerca de Nosotros' donde se muestra la descripcion del autor.
+
+video explicativo
+"C:\Users\USER\Videos\Captures\Explicacion Pagina Web.mp4"
