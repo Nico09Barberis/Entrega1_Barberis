@@ -63,7 +63,7 @@ def editar_auto(request, id):
             auto.fecha_creacion = form.cleaned_data.get('fecha_creacion')
             auto.save()
             
-            return redirect('listado_autos')
+            return redirect('listado_autos') 
         
         else:
             return render(request, 'auto/editar_auto.html', {'form': form, 'auto': auto})

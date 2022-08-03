@@ -1,30 +1,30 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>AUTOS</title>
+<title>Autos</title>
 {% endblock title %}
 
 {% block texto_header %}
-<h1>AUTO:</h1>
+<h1>Auto:</h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
  <p>
-    <a href={% url 'listado_autos' %}>Volver</a>
+    <a href={% url 'listado_autos' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Volver</button></a>
  </p>  
     <P>
         <ul>
             <li>
-               <b>Marca:</b> {{auto.marca}}
+               <U><b>Marca:</b></U>{{auto.marca}}
             </li>
             <li>
-               <b>Modelo:</b> {{auto.modelo}}
+               <U><b>Modelo:</b></U> {{auto.modelo}}
             </li>
             <li>
-               <b>Descripcion:</b> {{auto.descripcion | safe}}
+               <U><b>Descripci&oacute;n:</b></U> {{auto.descripcion | safe}}
             </li>
             <li>
-               <b>Fecha de Creacion:</b> {{auto.fecha_creacion}}
+               <U><b>Fecha de Creaci&oacute;n:</b></U> {{auto.fecha_creacion}}
             </li>
        </ul>
     </P> 

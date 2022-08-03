@@ -81,12 +81,12 @@ def editar_perfil(request):
         
     form = MyUserEditForm(
         initial={
-            'email': user.email,
             'first_name': user.first_name,
             'last_name': user.last_name,
-            'avatar': mas_datos_usuario.avatar,
-            'descripcion': mas_datos_usuario.descripcion,
+            'email': user.email,
             'red_social': mas_datos_usuario.red_social,
+            'descripcion': mas_datos_usuario.descripcion,
+            'avatar': mas_datos_usuario.avatar,
             }
         )
     return render(request, 'accounts/editar_perfil.html', {'form': form})

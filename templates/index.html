@@ -5,16 +5,118 @@
 {% endblock  %} 
 
 {% block header %}
-<header class="masthead">
+    <header class="masthead">
     <div class="container position-relative">
         <div class="row justify-content-center">
             <div class="col-xl-6">
                 <div class="text-center text-white">
-                    <h1 class="mb-5">{% block texto_header %}Bienvenidos a mi pagina!{% endblock texto_header %}</h1>
+                    <h1 class="mb-5">{% block texto_header %}ARROW{% endblock texto_header %}</h1>
+                    <h3>¡BIENVENIDOS A NUESTRA PLATAFORMA DIGITAL!</h3>
+                    <p></p>
                 </div>
             </div>
         </div>
     </div>
 </header>
 {% endblock header %}
+
+{% block despues_del_header %}
+<!-- Icons Grid-->
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
+                    <h3>CHAT ONLINE</h3>
+                    <p class="lead mb-0">¿Tenes dudas o consultas? Podes chatear con nosotros online haciendo click aqui.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
+                    <h3>PLATAFORMA DIGITAL</h3>
+                    <p class="lead mb-0">Arrow presenta su nueva plataforma digital de Usados Certificados.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
+                    <h3>CONCECIONARIAS ARROW</h3>
+                    <p class="lead mb-0">Encontra el concecionario Arrow mas cerca tuyo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Image Showcases-->
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-1.jpg')"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>CALIDAD E INNOVACI&Oacute;N EN PRODUCTOS &Uacute;NICOS</h2>
+                <img src='https://cdn.pixabay.com/photo/2018/01/11/06/23/car-3075497_960_720.jpg'
+                    alt=""
+                width='400px'
+                height='241px'>
+                <p class="lead mb-0">Bajo los pilares de la confianza, la calidad y la innovación creamos alianzas únicas para llegar a nuestros clientes con propuestas únicas y diferenciales. Inmersos en la era digital, contamos con gestiones eficientes y modernas para acercarnos a nuestros clientes en el formato que nos necesitan. Te brindamos mucha más que un seguro.</p>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
+            <div class="col-lg-6 my-auto showcase-text">
+                <h2>FUTURO SUSTENTABLE</h2>
+                <img src='https://cdn.pixabay.com/photo/2020/09/21/23/27/leaves-5591446_960_720.jpg'
+                alt=""
+            width='400px'
+            height='241px'>
+                <p class="lead mb-0">Las nuevas tecnologías de Arrow para construir un futuro sustentable. Arrow Motor Corporation presentó en junio dos soluciones disruptivas para el desarrollo de las energías limpias. Por un lado, el sistema de baterías de almacenamiento doméstico O-Uchi Kyuden, y por otro, un nuevo prototipo de cartucho portátil de hidrógeno, diseñado para transportar esta forma de energía sin emisiones adonde se la necesite y con un amplio abanico de aplicaciones.</p>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>CONTRATA EL MEJOR SEGURO PARA TU AUTO</h2>
+                <img src='https://cdn.pixabay.com/photo/2021/05/10/10/19/car-crash-6243099_640.jpg'
+                alt=""
+            width='400px'
+            height='241px'>
+                <p class="lead mb-0">Las mejores coberturas para todas las marcas con las principales aseguradoras del pais. Gestion simple y online.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonials-->
+<section class="testimonials text-center bg-light">
+    <div class="container">
+        <h2 class="mb-5">OPINIONES DE CLIENTES</h2>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="https://cdn.pixabay.com/photo/2016/11/29/13/14/attractive-1869761_960_720.jpg
+                    " alt="..." />
+                    <h5>Lucia E.</h5>
+                    <p class="font-weight-light mb-0">"Excelente atenci&oacute;n y amabilidad al momento de contactarse conmigo."</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="https://cdn.pixabay.com/photo/2017/06/15/11/40/beautiful-2405131_960_720.jpg" alt="..." />
+                    <h5>Morena S.</h5>
+                    <p class="font-weight-light mb-0">"Comodidad y seguridad total, desde el primer dia."</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src=	'https://cdn.pixabay.com/photo/2018/02/16/14/38/portrait-3157821_960_720.jpg' alt="..." />
+                    <h5>Gustavo L.</h5>
+                    <p class="font-weight-light mb-0">"Respuestas rapidas y efectivas para solucionar mis dudas, excelente!"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock despues_del_header %}
 

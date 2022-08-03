@@ -1,16 +1,39 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>ACERCA NOS.</title>
+<title>Acerca Nos.</title>
 {% endblock title %}
 
 {% block texto_header %}
-<h1>ACERCA DE NOSOTROS</h1>
+<h1>Acerca de Nosotros</h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
-<H3>
-    DESCRIPCION 
-</H3>
+
+<div class="card mb-3">
+    <h3 class="card-header" _msthash="1596478" _msttexthash="411502">¡Hola!¿Cómo estas?</h3>
+    <div class="card-body">
+      <h5 class="card-title" _msthash="1977079" _msttexthash="852384">Me presento, me llamo Nicol&aacute;s Barberis y tengo 19 a&ntilde;os</h5>
+      <h6 class="card-subtitle text-muted" _msthash="1977313" _msttexthash="870571"> Es mi primera experiencia trabajando con Python y en si, a la programaci&oacute;n. </h6>
+    </div>
+    <img src="https://cdn.pixabay.com/photo/2016/03/27/18/54/technology-1283624_640.jpg" alt="", width='60%', height='300' >
+    </svg>
+    <div class="card-body">
+      <p class="card-text" _msthash="1915992" _msttexthash="9345557">Desde chico me llamo la atenci&oacute;n todo lo relacionado tanto a la programaci&oacute;n como 
+        a la inform&aacute;tica, as&iacute; que <br> decid&iacute; comenz&aacute;r con este curso de Python, el cu&aacute;l me ha dejado maravillado por completo desde el prim&eacute;r d&iacute;a.
+       <br> Actualmente estoy estudiando Tecnicatura en programaci&oacute;n y estoy muy contento por este camino que <br> estoy recorriendo, el cual, no tiene fin, ya que el mundo de la 
+       tecnolog&iacute;a es as&iacute;, todos los d&iacute;as hay algo nuevo <br> para aprender, por ende que hay que estar al tanto de las actualizaciones diarias sobre este maravilloso mundo.
+        <P><br> Las 3 ense&ntilde;anzas/practicas m&aacute;s importantes que me llevo de este curso son:</P>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" _msthash="1915082" _msttexthash="237029">Probar c&oacute;digo, probar y probar y probar... porque es lo m&aacute;s complicado y a la vez es el aspecto clave de la programaci&oacute;n.</li>
+      <li class="list-group-item" _msthash="1915212" _msttexthash="451659"> Leer c&oacute;digo, tanto de proyectos de c&oacute;digo abierto, como el de compa&ntilde;eros programadores e intentar entender <br> por qu&eacute; y c&oacute;mo funcionan. Buscar los patrones, desarrolla tu habilidad de ojear y buscar cosas…</li>
+      <li class="list-group-item" _msthash="1915342" _msttexthash="328445">El arte de programar require su tiempo, as&iacute; que hay que dedicarle el tiempo necesario.</li>
+      <p></p>
+    </ul>
+
+<a href={% url 'index' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Volver</button></a>
+
 {% endblock despues_del_header %}
+
 

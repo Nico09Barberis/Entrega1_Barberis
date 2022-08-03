@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Listado de Blogs</title>
+{% endblock title %}
+
+{% block texto_header %}
+<h1>Listado de Blogs:</h1>
+{% endblock texto_header %}
+
+{% block despues_del_header %}
+    <p>
+        <a href={% url 'crear_blog' %}><button type="button" class="btn btn-outline-success" _msthash="1334749" _msttexthash="74009">Crear Blog</button></a>
+    </p>
+    <p>
+        <form action={% url 'listado_blogs' %}>
+            <p></p>
+            {{form}}
+            <button>Buscar</button>
+        </form> 
+    </p>
+    <P>
+        {% if listado_blogs %}
+       <ul>
+            {% for blog in listado_blogs %}
+                <li>
+                    {{blog}}
+                    <a href={% url 'editar_blog' blog.id %}><button type="button" class="btn btn-primary btn-sm" _msthash="1455558" _msttexthash="256607">Editar</button></a>
+                    <a href={% url 'eliminar_blog' blog.id %}><button type="button" class="btn btn-primary btn-sm" _msthash="1455558" _msttexthash="256607">Eliminar</button></a>
+                    <a href={% url 'mostrar_blog' blog.id %}><button type="button" class="btn btn-primary btn-sm" _msthash="1455558" _msttexthash="256607">Ver Mas</button></a>
+
+                </li>
+            {% endfor %}
+       </ul>
+        {% else %}
+        No se encontraron datos
+        {% endif %}
+    </P> 
+{% endblock despues_del_header %}
+

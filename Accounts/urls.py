@@ -3,7 +3,7 @@ from django.urls import path
 from.views import login, register, perfil, editar_perfil, ChangePasswordView, acerca_nos
 from django.contrib.auth.views import LogoutView
 
-
+ 
 urlpatterns = [
     path('login/', login, name='login'),
     path('register/', register, name='register'),

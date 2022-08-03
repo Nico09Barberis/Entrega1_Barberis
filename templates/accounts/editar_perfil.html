@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>EDITAR PERFIL</title>
+<title>Editar Perfil</title>
 {% endblock title %}
 
 {% block texto_header %}
-<h1>EDITANDO PERFIL DE: {{request.user.username}}</h1>
+<h1>Editando Perfil de: {{request.user.username}}</h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
@@ -17,9 +17,10 @@
                 {{form.as_table}}
             </table>
             <button>Editar</button>
+            <p></p>
        </form>
         <p>
-            <a href={% url 'cambiar_password' %}>Cambiar password</a>
+            <a href={% url 'cambiar_password' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Cambiar contraseña</button></a>
         </p>
     </P> 
    

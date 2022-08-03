@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>LOGIN</title>
+<title>Inicio de Sesi&oacute;n</title>
 {% endblock title %}
 
 {% block texto_header %}
-<h1>LOGIN:</h1>
+<h1>Inicio de Sesi&oacute;n:</h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
     <p>
-        <a href={% url 'index' %}>Volver</a>
+        <a href={% url 'index' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Volver</button></a>
     </p>
     <P>
        <form action={% url 'login' %} method="post">
@@ -18,7 +18,7 @@
             <table>
                 {{form.as_table}}
             </table>
-            <button>Loguearse</button>
+            <button>Ingresar</button>
        </form>
     </P> 
 {% endblock despues_del_header %}

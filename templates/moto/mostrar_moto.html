@@ -1,27 +1,27 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>MOTOS</title>
+<title>Motos</title>
 {% endblock title %}
 
 {% block texto_header %}
-<h1>MOTO:</h1>
+<h1>Moto:</h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
  <p>
-    <a href={% url 'listado_motos' %}>Volver</a>
+    <a href={% url 'listado_motos' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Volver</button></a>
  </p>  
     <P>
         <ul>
             <li>
-               <b>Marca:</b> {{moto.nombre}}
+               <U><b>Marca:</b></U> {{moto.nombre}}
+            </li> 
+            <li>
+                <U><b>Modelo:</b></U> {{moto.modelo}}
             </li>
             <li>
-                <b>Modelo:</b> {{moto.modelo}}
-            </li>
-            <li>
-                <b>Fecha de Creacion</b> {{moto.fecha_creacion}}
+                <U><b>Fecha de Creaci&oacute;n:</b></U> {{moto.fecha_creacion}}
             </li>
        </ul>
     </P> 

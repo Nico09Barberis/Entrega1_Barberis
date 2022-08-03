@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>LISTADO DE AUTOS</title>
+<title>Listado de Autos</title>
 {% endblock title %}
 
 {% block texto_header %}
-<h1>LISTADO DE AUTOS:</h1>
+<h1>Listado de Autos:</h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
     <p>
-        <a href={% url 'crear_auto' %}> CREAR AUTO</a>
+        <a href={% url 'crear_auto' %}><button type="button" class="btn btn-outline-success" _msthash="1334749" _msttexthash="74009">Crear Auto</button></a>
     </p>
     <p>
         <form action={% url 'listado_autos' %}>
@@ -24,13 +24,13 @@
             {% for auto in listado_autos %}
                 <li>
                     {{auto}}
-                    <a href={% url 'editar_auto' auto.id %}>Editar</a>
-                    <a href={% url 'eliminar_auto' auto.id %}>Eliminar</a>
-                    <a href={% url 'mostrar_auto' auto.id %}>Ver mas</a>
-
+                    <a href={% url 'editar_auto' auto.id %}><button type="button" class="btn btn-primary btn-sm" _msthash="1455558" _msttexthash="256607">Editar</button></a>
+                    <a href={% url 'eliminar_auto' auto.id %}><button type="button" class="btn btn-primary btn-sm" _msthash="1455558" _msttexthash="256607">Eliminar</button></a>
+                    <a href={% url 'mostrar_auto' auto.id %}><button type="button" class="btn btn-primary btn-sm" _msthash="1455558" _msttexthash="256607">Ver Mas</button></a>
+                    <p></p>
                 </li>
-            {% endfor %}
-       </ul>
+            {% endfor %} 
+       </ul> 
         {% else %}
         No se encontraron datos
         {% endif %}

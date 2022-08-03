@@ -17,12 +17,13 @@ class MyUserCretionForm(UserCreationForm):
 
 
 class MyUserEditForm(forms.Form):
-    email = forms.EmailField(required=False)
     # password1 = forms.CharField(label='password', widget=forms.PasswordInput, required=False)
     # password2 = forms.CharField(label='repetir password', widget=forms.PasswordInput, required=False)
     first_name = forms.CharField(label='nombre', max_length=30, required=False)
     last_name = forms.CharField(label='apellido', max_length=30, required=False)
-    avatar = forms.ImageField(required=False)
+    email = forms.EmailField(required=False)
     red_social = forms.CharField(label='red_social', max_length=30, required=False)
     descripcion = RichTextFormField(required=False)
+    avatar = forms.ImageField(required=False)
+    
     

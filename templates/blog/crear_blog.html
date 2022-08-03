@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>Editar Auto</title>
+<title>Crear Blog</title>
 {% endblock title %}
 
 {% block texto_header %}
-<h1>Edita tu Auto:</h1>
+<h1>Crea tu Blog:</h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
     <p>
-        <a href={% url 'listado_autos' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Volver</button></a>
+        <a href={% url 'listado_blogs' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Volver</button></a>
     </p>
     <P>
-       <form action={% url 'editar_auto' auto.id%} method="post">
+       <form action={% url 'crear_blog' %} method="post">
             {% csrf_token %}
             <table>
                 {{form.media}}
                 {{form.as_table}}
             </table>
-            <button>Editar</button>
+            <button>Crear</button>
        </form>
     </P> 
 {% endblock despues_del_header %}

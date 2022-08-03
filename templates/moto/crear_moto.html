@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>CREAR MOTO</title>
+<title>Crear Moto</title>
 {% endblock title %}
 
 {% block texto_header %}
-<h1>CREA TU MOTO:</h1>
+<h1>Crea tu Moto:</h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
     <p>
-        <a href={% url 'listado_motos' %}>Volver</a>
+        <a href={% url 'listado_motos' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Volver</button></a>
     </p>
     <P>
        <form action={% url 'crear_moto' %} method="post">

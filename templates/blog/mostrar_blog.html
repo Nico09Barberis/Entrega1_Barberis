@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Blogs</title>
+{% endblock title %}
+
+{% block texto_header %}
+<h1>Blog:</h1>
+{% endblock texto_header %}
+
+{% block despues_del_header %}
+ <p>
+    <a href={% url 'listado_blogs' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Volver</button></a>
+ </p>  
+    <P>
+        <ul>
+            <li>
+               <U><b>Titulo:</b></U> {{blog.titulo}}
+            </li>
+            <li>
+               <U><b>Subtitulo:</b></U> {{blog.subtitulo}}
+            </li>
+            <li>
+               <U><b>Contenido:</b></U> {{blog.contenido | safe}}
+            </li>
+            <li>
+               <U><b>Autor:</b></U> {{blog.autor}}
+            </li>
+            <li>
+                <U><b>Fecha de Creaci&oacute;n:</b></U> {{blog.fecha_creacion}}
+             </li>
+       </ul>
+    </P> 
+{% endblock despues_del_header %}
+

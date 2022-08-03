@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>REGISTRO</title>
+<title>Registro</title>
 {% endblock title %}
 
 {% block texto_header %}
-<h1>REGISTRO:</h1>
+<h1>Registro:</h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
     <p>
-        <a href={% url 'index' %}>Volver</a>
+        <a href={% url 'index' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Volver</button></a>
     </p>
     <P>
        <form action={% url 'register' %} method="post">

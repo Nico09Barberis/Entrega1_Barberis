@@ -10,4 +10,4 @@ class FormAuto(forms.Form):
     
     
 class BusquedaAuto(forms.Form):
-    marca = forms.CharField(max_length=30, required=False) 
+    marca = forms.CharField(max_length=30, required=False)  

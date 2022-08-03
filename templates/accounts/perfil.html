@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>PERFIL</title>
+<title>Perfil</title>
 {% endblock title %}
 
 {% block texto_header %}
-<h1>PERFIL USUARIO: {{request.user.username}}</h1>
+<h1>Perfil del Usuario: {{request.user.username}}</h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
     <p>
         <ul>
-            <li>Nombre: {{request.user.first_name}}</li>
-            <li>Apellido: {{request.user.last_name}}</li>
-            <li>Descripcion: {{request.user.masdatosusuario.descripcion}}</li>
-            <li>Red Social: {{request.user.masdatosusuario.red_social}}</li>
-            <li>E-mail: {{request.user.email}}</li>
+            <li><U><b>Nombre:</b></U>{{request.user.first_name}}</li>
+            <li><U><b>Apellido:</b></U> {{request.user.last_name}}</li>
+            <li><U><b>Descripcion:</b></U> {{request.user.masdatosusuario.descripcion}}</li>
+            <li><U><b>Red Social:</b></U> {{request.user.masdatosusuario.red_social}}</li>
+            <li><U><b>E-mail:</b></U> {{request.user.email}}</li>
             <li>
-                <p>Avatar: </p>
+                <p><U><b>Avatar:</b></U></p>
                 {% if request.user.masdatosusuario.avatar %}
                 <img src={{request.user.masdatosusuario.avatar.url}} alt="", height='130px'>
                 {% endif %}
@@ -26,7 +26,7 @@
     </p>
 
    <p>
-    <a href={% url 'editar_perfil' %}>Editar mis datos</a>
+    <a href={% url 'editar_perfil' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Editar mis Datos</button></a>
    </p>
 {% endblock despues_del_header %}
 

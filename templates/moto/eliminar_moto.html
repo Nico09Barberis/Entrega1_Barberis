@@ -1,23 +1,24 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>ELIMINAR MOTO</title>
+<title>Eliminar Motor</title>
 {% endblock title %}
 
 {% block texto_header %}
-<h1>ELIMINAR MOTO:</h1>
+<h1>Eliminar Moto:</h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
  <p>
-    <a href={% url 'listado_motos' %}>Volver</a>
+    <a href={% url 'listado_motos' %}><button type="button" class="btn btn-primary disabled" _msthash="1334151" _msttexthash="115193">Volver</button></a>
  </p>  
     <P>
       <form action={% url 'eliminar_moto' object.id %} method='post'>
         {% csrf_token %}
-         ¿Desea eliminar la moto?
-        <button>Confirmar</button>
+        <div class="alert alert-dismissible alert-danger">
+          <font _mstmutation="1" _msthash="1315431" _msttexthash="2364440"><e _mstmutation="1" _istranslated="1">¿Desea eliminar la moto?</font></div>
+          <button type="button" class="btn btn-outline-danger" _msthash="1335295" _msttexthash="95342">Confirmar Cambios</button>
       </form>
     </P> 
 {% endblock despues_del_header %}
-
+  
