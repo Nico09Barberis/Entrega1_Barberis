@@ -17,8 +17,6 @@ class MyUserCretionForm(UserCreationForm):
 
 
 class MyUserEditForm(forms.Form):
-    # password1 = forms.CharField(label='password', widget=forms.PasswordInput, required=False)
-    # password2 = forms.CharField(label='repetir password', widget=forms.PasswordInput, required=False)
     first_name = forms.CharField(label='nombre', max_length=30, required=False)
     last_name = forms.CharField(label='apellido', max_length=30, required=False)
     email = forms.EmailField(required=False)
